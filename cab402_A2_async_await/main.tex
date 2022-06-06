@@ -11,6 +11,7 @@
 % Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage[]{verbatim}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 % This package is handy for captioning figures, you can set caption style here as well
@@ -22,21 +23,24 @@
 % https://www.youtube.com/watch?v=WLqVLNzIN9E
 % \usepackage[framed, numbered]{matlab-prettifier}
 % \lstlistoflistings
+% \usepackage{listings}
+% \usepackage{xcolor}
+
+\usepackage[]{csharp}
 
 % This allows really nice formatting for MATLAB code, it's the main plug in package that I use
-\usepackage[numbered,framed]{mcode}
+% \usepackage[numbered,framed]{mcode}
 
 \lstset{
-numbers=none, % Prefer not to set numbers due to the inconvience in copying 
+  numbers=none, % Prefer not to set numbers due to the inconvience in copying 
 }
-
-
 \title{CAB202 Asynchronous Programming with Async Await
 \\\large A survey on its usage in c\# and javascript and the paradigms related}
 
 \author{Anhad Ahuja}
 
 \begin{document}
+
 \maketitle
 
 
@@ -44,17 +48,27 @@ numbers=none, % Prefer not to set numbers due to the inconvience in copying
 \section{Introduction}
 
 
-Given no context for the underlying physcical system behind a dataset makes allows a analsys for raw data especially for deriving correlations instead of causations. However, if given some context there is sure to be false causality drawn from statements presented in this report. This report will outline some very detailed statistics about the data given and attempt to produce consumable information for potential analysis. 
+Given no context for the underlying physcical system behind a dataset makes allows a analsys for raw data especially for deriving correlations instead of causations. However, if given some context there is sure to be false causality drawn from statements presented in this report. This report will outline some very detailed statistics about the data given and attempt to produce consumable information for potential analysis.
 
 \newpage
 
 \section{How async works under the hodo in c\#}
+\begin{lstlisting}[language={[Sharp]C}]
+
+      public HomeViewModel()
+        {
+            SelectedIndex = 0;
+            Games = new ObservableCollection<Game>(Db.games);
+            DispatcherTimer timer = new DispatcherTimer();
+        }
+\end{lstlisting}
 
 \section{Previous paradigm used and history of introduction}
 
 \section{UI based example and how to avoid system locking}
 
-\section{Task.Run based example}
+\section{\texttt{Task.Run} based example}
+
 
 \section{Additional quirks and useful features of Task based await}
 \subsection{Cancellation tokens}
