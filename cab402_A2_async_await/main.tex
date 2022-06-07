@@ -58,6 +58,9 @@ Given no context for the underlying physcical system behind a dataset makes allo
 \subsection{State Machine implementation}
 
 \subsection{SynchronizationContext}
+The context that a piece of code gets run on is
+% https://stackoverflow.com/questions/22645024/when-would-i-use-task-yield
+% https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/february/msdn-magazine-parallel-computing-it-s-all-about-the-synchronizationcontext
 
 \begin{lstlisting}[language={[Sharp]C}]
 
@@ -71,9 +74,17 @@ Given no context for the underlying physcical system behind a dataset makes allo
 
 \section{Previous paradigm used and history of introduction}
 
-\section{Using lazy evaluation of enumerables }
+\section{Using lazy evaluation of enumerables: \texttt{IAsyncEnumarable}}
+%  await foreach (var stepPoint in step.PlaceStep(sprinklerParameters, region, region, sprinklerRegions, possibleTilePositions, sprinklerLines, sprinklerObstructions, sprinklerPoints.Values.ToArray(), true, svgWriter, cancellationToken))
+% https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
+% https://stackoverflow.com/questions/25009437/running-multiple-async-tasks-and-waiting-for-them-all-to-complete
 
 \section{UI based example and how to avoid system locking}
+Locks up Ui, conventionally heavy computationaly or IO based operation that locks up UI thread is undesirable.
+It could be possible to create a new thread using system API and delegate tasks to that,
+but that has a lot of computational and programmer overhead.
+Generally not a trivial matter especially to sync up content and data.
+
 
 \section{\texttt{Task.Run} based example}
 
