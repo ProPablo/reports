@@ -19,6 +19,8 @@
 
 % This is important for position images as latex will put your image where it best fits unless you tell it otherwise
 \usepackage{float}
+% \usepackage{biblatex}
+% \addbibresource{main.bib}
 
 % https://www.youtube.com/watch?v=WLqVLNzIN9E
 % \usepackage[framed, numbered]{matlab-prettifier}
@@ -28,8 +30,8 @@
 
 \usepackage[]{csharp}
 
-% This allows really nice formatting for MATLAB code, it's the main plug in package that I use
-% \usepackage[numbered,framed]{mcode}
+% Custom Macros
+
 
 \lstset{
   numbers=none, % Prefer not to set numbers due to the inconvience in copying 
@@ -47,13 +49,14 @@
 
 \section{Introduction}
 Async and await is fundamentally syntax to support modern asynchronous programming paradigms.
-
 Imperative or procedural programming is highly sought after (paradigm wise) in the modern software industry. 
-Imperative programming offers a more obvious flow of state and progression to the program and is thus known as algorithmic programnming.
-
+Imperative programming offers a more obvious flow of state and progression to the program and is thus known as 
+algorithmic programnming. \\ \\
 This api does not seem to be specifically aimed at performance for reasons explored in the implementation section
-however, it does seem ver applicaple to developers that wanted to do the same thing consistently which is to wait for actions that are out of thier control. 
-Black box approaches being supported by this feature further aids to the facade paradigm heavily induced within the c\# object oriented ecosystem. 
+however, it does seem ver applicaple to developers that wanted to do the same thing consistently 
+which is to wait for actions that are out of thier control. 
+Black box approaches being supported by this feature further aids to the facade paradigm heavily induced 
+within the c\# object oriented ecosystem. 
 
 
 
@@ -81,8 +84,32 @@ The context that a piece of code gets run on is
 
 \section{History}
 \subsection{How it was introduced}
-\subsection{Previous paradigm: used APM and history of introduction}
+Interestingly the concept of async await which fundamentally attempts to remove declaritive paradigms,
+actually originates from $F\#$ all the way back in 2007.\cite{fs_async}
+Monads are a functional programming paradigm aimed to assist in reducing the visual plumbing required to 
+get from one data type to another.
+In f\# computational expressions were used to unwrap the monad to the consumable datatype inside of the expression. 
+This can be seen in the following example:
+
+\begin{lstlisting}[language={[Sharp]C}]
+open Microsoft.FSharp.Control.COmmonExtensions
+
+let fetchURLAsync url = 
+  async {
+    let req = WebRequest.Create(Uri(url))
+    use! resp = req.AsyncGetResponse()
+    use 
+  }
+
+\end{lstlisting}
+
+
+
+This came in the form of monads to support a context where
+\subsection{Previous paradigms}
+\subsubsection{APM}
 This implementation can be awknowledged as using the message passing paradigm
+\subsubsection{EAP}
 
 \section{Using lazy evaluation of enumerables: \texttt{IAsyncEnumarable}}
 %  await foreach (var stepPoint in step.PlaceStep(sprinklerParameters, region, region, sprinklerRegions, possibleTilePositions, sprinklerLines, sprinklerObstructions, sprinklerPoints.Values.ToArray(), true, svgWriter, cancellationToken))
@@ -109,7 +136,9 @@ Generally not a trivial matter especially to sync up content and data.
 \section{Javascript similiar example using \texttt{Promise}}
 
 
-\bibliographystyle{alpha}
-\bibliography{sample}
+% \bibliographystyle{alpha}
+\bibliographystyle{IEEEtran}
+\bibliography{main}
+% \printbibliography
 
 \end{document}
