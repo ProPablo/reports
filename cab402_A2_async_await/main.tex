@@ -46,9 +46,16 @@
 
 
 \section{Introduction}
+Async and await is fundamentally syntax to support modern asynchronous programming paradigms.
+
+Imperative or procedural programming is highly sought after (paradigm wise) in the modern software industry. 
+Imperative programming offers a more obvious flow of state and progression to the program and is thus known as algorithmic programnming.
+
+This api does not seem to be specifically aimed at performance for reasons explored in the implementation section
+however, it does seem ver applicaple to developers that wanted to do the same thing consistently which is to wait for actions that are out of thier control. 
+Black box approaches being supported by this feature further aids to the facade paradigm heavily induced within the c\# object oriented ecosystem. 
 
 
-Given no context for the underlying physcical system behind a dataset makes allows a analsys for raw data especially for deriving correlations instead of causations. However, if given some context there is sure to be false causality drawn from statements presented in this report. This report will outline some very detailed statistics about the data given and attempt to produce consumable information for potential analysis.
 
 
 
@@ -72,7 +79,10 @@ The context that a piece of code gets run on is
         }
 \end{lstlisting}
 
-\section{Previous paradigm used and history of introduction}
+\section{History}
+\subsection{How it was introduced}
+\subsection{Previous paradigm: used APM and history of introduction}
+This implementation can be awknowledged as using the message passing paradigm
 
 \section{Using lazy evaluation of enumerables: \texttt{IAsyncEnumarable}}
 %  await foreach (var stepPoint in step.PlaceStep(sprinklerParameters, region, region, sprinklerRegions, possibleTilePositions, sprinklerLines, sprinklerObstructions, sprinklerPoints.Values.ToArray(), true, svgWriter, cancellationToken))
@@ -91,7 +101,7 @@ Generally not a trivial matter especially to sync up content and data.
 
 \section{Additional quirks and useful features of Task based await}
 \subsection{Cancellation tokens}
-\subsection{Progress}
+\subsection{\texttt{IProgress}}
 
 
 \section{Comparison to javascript}
